@@ -1,0 +1,95 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Logs and diagnostics
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.stackdump
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Temporary and cache files
+tmp/
+temp/
+.tmp/
+.temp/
+.cache/
+.codex-cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage/
+
+# Node and frontend artifacts
+node_modules/
+dist/
+build/
+.next/
+.nuxt/
+.svelte-kit/
+out/
+storybook-static/
+*.tsbuildinfo
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.eggs/
+*.egg-info/
+pip-wheel-metadata/
+
+# Package manager caches
+.pnpm-store/
+.yarn/
+!.yarn/patches/
+!.yarn/plugins/
+!.yarn/releases/
+!.yarn/sdks/
+!.yarn/versions/
+
+# Spec Kit generated local/runtime artifacts
+specs/*/.cache/
+specs/*/tmp/
+specs/*/artifacts/
+specs/*/screenshots/
+specs/*/videos/
+
+# Build and test outputs
+test-results/
+playwright-report/
+reports/
+artifacts/
+snapshots/
+
+# Local-only files
+*.local
+*.bak
+*.orig
