@@ -103,6 +103,20 @@
 - **[Entity 1]**: [What it represents, key attributes without implementation]
 - **[Entity 2]**: [What it represents, relationships to other entities]
 
+### Constitution Requirements *(mandatory)*
+
+- **Code Quality**: [Existing architecture, ownership, naming, and error-handling
+  patterns that this feature must preserve]
+- **Testing Standards**: [Independent verification required for each user story,
+  including automated coverage expectations or justified manual checks]
+- **UX Consistency**: [Adjacent workflows, terminology, components, accessibility
+  states, responsive behavior, and error/empty/loading states to preserve]
+- **Performance Requirements**: [Measurable budget or explicit non-risk rationale
+  for latency, throughput, memory, rendering, startup, bundle size, or resource
+  use]
+- **Decision Traceability**: [Decisions that must be recorded in plan, research,
+  contracts, or ADRs before implementation]
+
 ## Success Criteria *(mandatory)*
 
 <!--

@@ -40,7 +40,20 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- **Code Quality**: Does the plan preserve existing architecture, ownership,
+  naming, error handling, and formatting patterns? Document any justified
+  deviation and the simpler alternative that was rejected.
+- **Testing Standards**: What automated tests will cover new logic, changed
+  contracts, regressions, and critical journeys? If automation is deferred,
+  document the manual verification path and residual risk.
+- **UX Consistency**: For user-facing work, which adjacent workflows,
+  components, terminology, accessibility states, and responsive behaviors are
+  being reused or preserved?
+- **Performance Requirements**: What latency, throughput, memory, startup,
+  rendering, bundle, or resource budget applies? Define the measurement method
+  or explain why performance is not a risk for this feature.
+- **Decision Traceability**: Are material technical decisions recorded with
+  constraints, options considered, consequences, and validation expectations?
 
 ## Project Structure
 
