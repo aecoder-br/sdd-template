@@ -117,6 +117,19 @@
 - **Decision Traceability**: [Decisions that must be recorded in plan, research,
   contracts, or ADRs before implementation]
 
+### References & Non-Functional Risks *(optional)*
+
+- **Reference Material**: [Links to source documents, standards, APIs, design
+  references, or existing workflows that inform the feature]
+- **Security/Privacy Risks**: [Sensitive data, auth/authz, abuse cases, input
+  validation, logging, secrets, compliance, or "N/A with rationale"]
+- **Reliability/Operational Risks**: [Failure modes, recovery expectations,
+  support impact, observability needs, or "N/A with rationale"]
+- **Performance/Scale Risks**: [Latency, throughput, memory, rendering,
+  concurrency, storage, cost, or "N/A with rationale"]
+- **AI/Agent Risks**: [Prompt injection, tool permissions, generated code review,
+  memory/context poisoning, external connectors, or "N/A with rationale"]
+
 ## Success Criteria *(mandatory)*
 
 <!--

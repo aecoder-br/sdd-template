@@ -34,23 +34,29 @@ Users of this template should continue from Step 2 of the Spec Kit detailed
 process: create the project specification for the application or feature they
 want to build.
 
+For this Codex skills installation, use the skill names directly, such as
+`speckit-specify`, or ask Codex to use `$speckit-specify` when the UI supports
+skill chips. Slash-style prompts such as `/speckit.specify` may work in some
+surfaces, but the installed integration is Codex skills mode.
+
 ## Detailed Process for Codex
 
 The upstream process is documented in the
 [Spec Kit Detailed Process](https://github.com/github/spec-kit#-detailed-process).
-Use the Codex-focused flow below from Step 2 onward.
+Use the Codex-focused flow below from Step 2 onward. For non-trivial work, keep
+the clarify, checklist, analyze, and validation gates in the path instead of
+jumping straight from a spec to implementation.
 
 ### Step 2: Create Project Specifications
 
-Use the `speckit-specify` skill, or the slash-style request
-`/speckit.specify`, to describe the product behavior you want. Focus on what
+Use `speckit-specify` to describe the product behavior you want. Focus on what
 the system should do and why users need it. Avoid choosing the tech stack in
 this step unless it is a hard product constraint.
 
 Example:
 
 ```text
-/speckit.specify Build a task management application for small teams. Users can
+Use $speckit-specify to build a task management application for small teams. Users can
 create projects, assign tasks, comment on tasks, and move tasks across a Kanban
 board. Start with predefined users and no authentication for the first version.
 ```
@@ -64,19 +70,23 @@ Expected output:
 
 ### Step 3: Clarify the Specification
 
-Use `speckit-clarify`, or `/speckit.clarify`, before planning. Codex should
-identify underspecified requirements, ask targeted questions, and record the
-answers in the spec.
+Use `speckit-clarify` before planning. Codex should identify underspecified
+requirements, ask targeted questions, and record the answers in the spec.
 
 Skip this only for an intentional spike or prototype, and state that explicitly
 so the tradeoff is visible in the artifacts.
 
-### Step 4: Generate the Implementation Plan
+### Step 4: Create a Feature Checklist
 
-Use `speckit-plan`, or `/speckit.plan`, once the specification is stable. This
-is where you provide implementation constraints such as the language, framework,
-data storage, target platform, architecture preferences, and validation
-expectations.
+Use `speckit-checklist` when the feature needs an explicit quality checklist
+before planning. The checklist should cover requirement quality, security,
+testing, UX, performance, and traceability.
+
+### Step 5: Generate the Implementation Plan
+
+Use `speckit-plan` once the specification is stable. This is where you provide
+implementation constraints such as the language, framework, data storage, target
+platform, architecture preferences, agent strategy, and validation expectations.
 
 Expected output in `specs/<feature>/`:
 
@@ -86,19 +96,10 @@ Expected output in `specs/<feature>/`:
 - `contracts/` when applicable
 - `quickstart.md`
 
-### Step 5: Validate the Plan and Artifacts
-
-Use `speckit-analyze`, or `/speckit.analyze`, to check consistency across the
-specification, plan, and generated artifacts. Codex should look for missing
-requirements, contradictions, over-engineering, unclear test strategy, UX gaps,
-and performance risks before tasks are generated.
-
-The plan must keep the constitution as the decision filter.
-
 ### Step 6: Generate the Task Breakdown
 
-Use `speckit-tasks`, or `/speckit.tasks`, after the plan is accepted. This
-creates `tasks.md` in the feature directory with ordered, actionable work.
+Use `speckit-tasks` after the plan is accepted. This creates `tasks.md` in the
+feature directory with ordered, actionable work.
 
 The generated task list should include:
 
@@ -109,11 +110,20 @@ The generated task list should include:
 - Required validation and testing tasks
 - Checkpoints for independently testable user stories
 
-### Step 7: Implement
+### Step 7: Analyze the Artifacts
 
-Use `speckit-implement`, or `/speckit.implement`, when the specification, plan,
-and tasks are ready. Codex should execute tasks in order, respect dependencies,
-run the validation requested in the plan, and report unresolved risks.
+Use `speckit-analyze` before implementation to check consistency across the
+specification, plan, and tasks. Codex should look for missing requirements,
+contradictions, over-engineering, unclear test strategy, UX gaps, security gaps,
+and performance risks.
+
+The plan must keep the constitution as the decision filter.
+
+### Step 8: Implement
+
+Use `speckit-implement` when the specification, plan, tasks, and analysis are
+ready. Codex should execute tasks in order, respect dependencies, run the
+validation requested in the plan, and report unresolved risks.
 
 Codex may need local tools such as package managers, language runtimes, test
 runners, or browsers depending on the feature plan. Install those in the target
@@ -121,19 +131,19 @@ project environment before implementation begins.
 
 ## Common Commands
 
-| Purpose | Codex skill | Slash-style request |
-| --- | --- | --- |
-| Create or update principles | `speckit-constitution` | `/speckit.constitution` |
-| Create feature specification | `speckit-specify` | `/speckit.specify` |
-| Clarify specification | `speckit-clarify` | `/speckit.clarify` |
-| Create implementation plan | `speckit-plan` | `/speckit.plan` |
-| Analyze artifacts | `speckit-analyze` | `/speckit.analyze` |
-| Generate tasks | `speckit-tasks` | `/speckit.tasks` |
-| Implement tasks | `speckit-implement` | `/speckit.implement` |
-| Create checklist | `speckit-checklist` | `/speckit.checklist` |
+| Purpose | Codex skill |
+| --- | --- |
+| Create or update principles | `speckit-constitution` |
+| Create feature specification | `speckit-specify` |
+| Clarify specification | `speckit-clarify` |
+| Create checklist | `speckit-checklist` |
+| Create implementation plan | `speckit-plan` |
+| Generate tasks | `speckit-tasks` |
+| Analyze artifacts | `speckit-analyze` |
+| Implement tasks | `speckit-implement` |
 
-Codex skills are stored in `.agents/skills/`. If a surface does not support
-slash-style commands, ask Codex to use the named skill directly.
+Codex skills are stored in `.agents/skills/`. Ask Codex to use the named skill
+directly, or use `$skill-name` when the UI exposes skill chips.
 
 ## Working With This Template
 
@@ -141,8 +151,8 @@ slash-style commands, ask Codex to use the named skill directly.
 2. Open it with Codex.
 3. Read `AGENTS.md` and `.specify/memory/constitution.md`.
 4. Start a feature with Step 2: `speckit-specify`.
-5. Follow the generated artifacts through clarification, planning, analysis,
-   tasks, and implementation.
+5. Follow the generated artifacts through clarification, checklist, planning,
+   tasks, analysis, and implementation.
 
 Keep generated feature work under `specs/<feature>/`. Keep reusable Spec Kit
 template changes under `.specify/templates/`, and keep Codex workflow changes
@@ -158,6 +168,35 @@ updating from upstream:
 - Re-check `.specify/integration.json` and `.specify/init-options.json`.
 - Re-run the Spec Kit workflow on a small sample feature before adopting the
   update broadly.
+
+## Professional Baseline
+
+This repository is intentionally opinionated about governance and intentionally
+lightweight about tooling. It includes reusable guidance for:
+
+- agent operating rules and human approval boundaries;
+- security and agent-tooling threat modeling;
+- Definition of Done and quality gates;
+- architecture decision records and architecture overview;
+- observability, performance, release, and runbook templates;
+- GitHub issue and pull request templates.
+
+It does not enable active CI, scanners, releases, Dependabot, SBOM generation,
+or community Spec Kit extensions by default. Add those only when the target
+project has a concrete stack, package ecosystem, release process, and owner.
+
+## Optional Maturity Layers
+
+Evaluate these only after the project has real requirements and owners:
+
+- Spec Kit presets or extensions for agent parity, security governance,
+  architecture governance, explicit task dependencies, table of contents,
+  CI guard, QA testing, review, or verification.
+- Dependency automation such as Dependabot or Renovate.
+- Active GitHub Actions for lint, test, build, security scanning, artifact
+  publishing, provenance, or release.
+- OpenSSF Scorecard, SLSA provenance, SBOM publication, and formal threat
+  modeling.
 
 ## License
 

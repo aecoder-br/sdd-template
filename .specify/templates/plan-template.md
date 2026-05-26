@@ -54,6 +54,16 @@
   or explain why performance is not a risk for this feature.
 - **Decision Traceability**: Are material technical decisions recorded with
   constraints, options considered, consequences, and validation expectations?
+- **Security & Privacy**: What data, auth/authz, abuse, validation, secret
+  handling, dependency, or compliance risks must be addressed?
+- **Minimal Architecture**: What is the simplest architecture that satisfies the
+  spec, and what abstractions are intentionally avoided?
+- **Observability & Operations**: What logs, metrics, traces, alerts, runbooks,
+  or support paths are required for this feature's risk level?
+- **Supply Chain**: What new dependencies, generated artifacts, lockfiles,
+  provenance, or update automation are introduced?
+- **Agent Strategy**: What work is safe for subagents or skills, and what
+  actions require explicit human approval?
 
 ## Project Structure
 
@@ -124,3 +134,17 @@ directories captured above]
 |-----------|------------|-------------------------------------|
 | [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
 | [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+
+## Supporting Artifacts
+
+> **Create only when they reduce risk or preserve important decisions.**
+
+- **ADR Required?** [Yes/No - required for material architecture, contract,
+  data, security, performance, runtime, dependency, or cross-feature UX
+  decisions]
+- **Security Review Required?** [Yes/No - required when sensitive data, auth,
+  external integrations, secrets, generated code, or elevated tools are touched]
+- **Runbook Required?** [Yes/No - required for deployed services, scheduled jobs,
+  incident-prone workflows, or operational handoffs]
+- **Release Checklist Required?** [Yes/No - required for published packages,
+  deployable services, public APIs, migrations, or customer-visible releases]

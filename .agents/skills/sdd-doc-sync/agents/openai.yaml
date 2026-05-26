@@ -1,0 +1,7 @@
+interface:
+  display_name: "SDD Doc Sync"
+  short_description: "Docs drift review for SDD repos"
+  default_prompt: "Use $sdd-doc-sync to check drift across README, AGENTS.md, docs, and Spec Kit artifacts."
+
+policy:
+  allow_implicit_invocation: false

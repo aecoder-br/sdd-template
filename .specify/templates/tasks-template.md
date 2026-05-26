@@ -79,6 +79,8 @@ Examples of foundational tasks (adjust based on your project):
 - [ ] T009 Configure error handling and logging infrastructure
 - [ ] T010 Setup environment configuration management
 - [ ] T011 Define performance measurement or profiling harness required by plan
+- [ ] T012 Document any required ADR, security review, runbook, release
+      checklist, or explicit waiver from plan.md
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in
 parallel
@@ -95,19 +97,21 @@ parallel
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T012 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T013 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py
-- [ ] T014 [P] [US1] UX/accessibility verification for [primary workflow]
-- [ ] T015 [P] [US1] Performance verification for [budget or hot path]
+- [ ] T013 [P] [US1] Unit test for [logic/rule] in tests/unit/test_[name].py
+- [ ] T014 [P] [US1] Contract test for [endpoint/interface] in tests/contract/test_[name].py
+- [ ] T015 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py
+- [ ] T016 [P] [US1] UX/accessibility verification for [primary workflow]
+- [ ] T017 [P] [US1] Security/abuse-case verification for [risk]
+- [ ] T018 [P] [US1] Performance verification for [budget or hot path]
 
 ### Implementation for User Story 1
 
-- [ ] T016 [P] [US1] Create [Entity1] model in src/models/[entity1].py
-- [ ] T017 [P] [US1] Create [Entity2] model in src/models/[entity2].py
-- [ ] T018 [US1] Implement [Service] in src/services/[service].py (depends on T016, T017)
-- [ ] T019 [US1] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T020 [US1] Add validation and error handling
-- [ ] T021 [US1] Add logging for user story 1 operations
+- [ ] T019 [P] [US1] Create [Entity1] model in src/models/[entity1].py
+- [ ] T020 [P] [US1] Create [Entity2] model in src/models/[entity2].py
+- [ ] T021 [US1] Implement [Service] in src/services/[service].py (depends on T019, T020)
+- [ ] T022 [US1] Implement [endpoint/feature] in src/[location]/[file].py
+- [ ] T023 [US1] Add validation and error handling
+- [ ] T024 [US1] Add safe logging or observability hooks for user story 1 operations
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and
 testable independently
@@ -122,17 +126,19 @@ testable independently
 
 ### Tests for User Story 2
 
-- [ ] T022 [P] [US2] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T023 [P] [US2] Integration test for [user journey] in tests/integration/test_[name].py
-- [ ] T024 [P] [US2] UX/accessibility verification for [primary workflow]
-- [ ] T025 [P] [US2] Performance verification for [budget or hot path]
+- [ ] T025 [P] [US2] Unit test for [logic/rule] in tests/unit/test_[name].py
+- [ ] T026 [P] [US2] Contract test for [endpoint/interface] in tests/contract/test_[name].py
+- [ ] T027 [P] [US2] Integration test for [user journey] in tests/integration/test_[name].py
+- [ ] T028 [P] [US2] UX/accessibility verification for [primary workflow]
+- [ ] T029 [P] [US2] Security/abuse-case verification for [risk]
+- [ ] T030 [P] [US2] Performance verification for [budget or hot path]
 
 ### Implementation for User Story 2
 
-- [ ] T026 [P] [US2] Create [Entity] model in src/models/[entity].py
-- [ ] T027 [US2] Implement [Service] in src/services/[service].py
-- [ ] T028 [US2] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T029 [US2] Integrate with User Story 1 components (if needed)
+- [ ] T031 [P] [US2] Create [Entity] model in src/models/[entity].py
+- [ ] T032 [US2] Implement [Service] in src/services/[service].py
+- [ ] T033 [US2] Implement [endpoint/feature] in src/[location]/[file].py
+- [ ] T034 [US2] Integrate with User Story 1 components (if needed)
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work
 independently
@@ -147,16 +153,18 @@ independently
 
 ### Tests for User Story 3
 
-- [ ] T030 [P] [US3] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T031 [P] [US3] Integration test for [user journey] in tests/integration/test_[name].py
-- [ ] T032 [P] [US3] UX/accessibility verification for [primary workflow]
-- [ ] T033 [P] [US3] Performance verification for [budget or hot path]
+- [ ] T035 [P] [US3] Unit test for [logic/rule] in tests/unit/test_[name].py
+- [ ] T036 [P] [US3] Contract test for [endpoint/interface] in tests/contract/test_[name].py
+- [ ] T037 [P] [US3] Integration test for [user journey] in tests/integration/test_[name].py
+- [ ] T038 [P] [US3] UX/accessibility verification for [primary workflow]
+- [ ] T039 [P] [US3] Security/abuse-case verification for [risk]
+- [ ] T040 [P] [US3] Performance verification for [budget or hot path]
 
 ### Implementation for User Story 3
 
-- [ ] T034 [P] [US3] Create [Entity] model in src/models/[entity].py
-- [ ] T035 [US3] Implement [Service] in src/services/[service].py
-- [ ] T036 [US3] Implement [endpoint/feature] in src/[location]/[file].py
+- [ ] T041 [P] [US3] Create [Entity] model in src/models/[entity].py
+- [ ] T042 [US3] Implement [Service] in src/services/[service].py
+- [ ] T043 [US3] Implement [endpoint/feature] in src/[location]/[file].py
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -176,6 +184,10 @@ independently
 - [ ] TXXX [P] Additional unit tests for uncovered edge cases in tests/unit/
 - [ ] TXXX Security hardening
 - [ ] TXXX UX consistency and accessibility review
+- [ ] TXXX Complete Definition of Done checklist
+- [ ] TXXX Complete security review or record explicit waiver
+- [ ] TXXX Add or update ADR for any material decision
+- [ ] TXXX Confirm CI/release checklist remains inactive unless stack and owner exist
 - [ ] TXXX Record final validation evidence and unresolved risks
 - [ ] TXXX Run quickstart.md validation
 
@@ -204,11 +216,15 @@ independently
 ### Within Each User Story
 
 - Tests and verification tasks MUST be defined before implementation
+- Test depth must match risk: unit for logic, contract for interfaces, integration
+  for critical flows, and E2E only for high-value user journeys
 - Models before services
 - Services before endpoints
 - Core implementation before integration
 - Story complete before moving to next priority
 - Constitution gates must be satisfied or explicitly waived before delivery
+- ADRs are required only for material architecture, contract, data, security,
+  runtime, dependency, performance, or cross-feature UX decisions
 
 ### Parallel Opportunities
 
@@ -229,6 +245,7 @@ independently
 Task: "Contract test for [endpoint] in tests/contract/test_[name].py"
 Task: "Integration test for [user journey] in tests/integration/test_[name].py"
 Task: "UX/accessibility verification for [primary workflow]"
+Task: "Security/abuse-case verification for [risk]"
 Task: "Performance verification for [budget or hot path]"
 
 # Launch all models for User Story 1 together:
@@ -277,4 +294,7 @@ With multiple developers:
 - Verify tests fail before implementing when test-first is required by the plan
 - Commit after each task or logical group
 - Stop at any checkpoint to validate story independently
+- Keep refactors separate from feature behavior when that improves reviewability
+- Do not add new abstractions unless they remove real duplication or isolate a
+  stable boundary
 - Avoid: vague tasks, same file conflicts, cross-story dependencies that break independence

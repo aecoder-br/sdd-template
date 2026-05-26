@@ -1,0 +1,7 @@
+interface:
+  display_name: "SDD Security Review"
+  short_description: "Security review for SDD artifacts"
+  default_prompt: "Use $sdd-security-review to review a spec, plan, tasks, or diff for security and tooling risks."
+
+policy:
+  allow_implicit_invocation: false
