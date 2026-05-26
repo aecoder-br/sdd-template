@@ -1,0 +1,7 @@
+interface:
+  display_name: "SDD Research Senior"
+  short_description: "Research plans with sources and tradeoffs"
+  default_prompt: "Use $sdd-research-senior to research options, sources, tradeoffs, risks, and a practical implementation plan."
+
+policy:
+  allow_implicit_invocation: false

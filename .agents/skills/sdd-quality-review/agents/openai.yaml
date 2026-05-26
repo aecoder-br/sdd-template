@@ -1,0 +1,7 @@
+interface:
+  display_name: "SDD Quality Review"
+  short_description: "Quality review for tests and design"
+  default_prompt: "Use $sdd-quality-review to review tests, clean code, SOLID fit, over-engineering, and Definition of Done."
+
+policy:
+  allow_implicit_invocation: false
