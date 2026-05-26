@@ -1,0 +1,41 @@
+# Example GitHub Actions CI template.
+# Copy this to .github/workflows/ci.yml only after the target project has a
+# concrete stack, package ecosystem, and owners for these commands.
+
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up runtime
+        run: echo "Install the project runtime here"
+
+      - name: Install dependencies
+        run: echo "Install dependencies with the project package manager"
+
+      - name: Lint and format check
+        run: echo "Run lint/format checks"
+
+      - name: Test
+        run: echo "Run unit, contract, and integration tests"
+
+      - name: Build
+        run: echo "Run build or typecheck"
+
+      - name: Security checks
+        run: echo "Run dependency or security checks when configured"
