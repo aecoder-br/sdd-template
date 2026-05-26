@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Spec Kit upstream
+    url: https://github.com/github/spec-kit
+    about: Use for upstream Spec Kit questions or bugs.
+  - name: Template documentation
+    url: https://github.com/github/spec-kit#-detailed-process
+    about: Review the upstream detailed process before filing workflow issues.

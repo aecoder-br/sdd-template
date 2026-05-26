@@ -1,0 +1,13 @@
+# Example Dependabot configuration.
+# Rename to dependabot.yml only after the target project has a real package
+# ecosystem and an owner for dependency review.
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps"
